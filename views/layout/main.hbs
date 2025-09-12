@@ -50,7 +50,7 @@
     <!--header area start-->
     <header class="header_area header_padding">
         <!--header top start-->
-        <div class="header_top top_two">
+        {{!-- <div class="header_top top_two">
             <div class="container">
                 <div class="top_inner">
                     <div class="row align-items-center">
@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!--header top start-->
         <!--header middel start-->
         <div class="header_middle middle_two">
@@ -104,25 +104,33 @@
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9">
-                        <div class="middel_right">
-                            <div class="search-container search_two">
-                                <form action="#">
-                                    <div class="search_box">
-                                        <input placeholder="Search entire store here ..." type="text">
-                                        <button type="submit"><i class="ion-ios-search-strong"></i></button>
-                                    </div>
-                                </form>
+                        <div class="middel_right d-flex align-items-center justify-content-between">
+                            <div class="header_bottom_container">
+                           
+                              <div class="main_menu">
+                                  <nav>
+                                      <ul>
+                                          
+                                        
+                                          <li><a href="about-us">about Us</a></li>
+                                          <li><a href="contact"> Contact Us</a></li>
+                                      </ul>
+                                  </nav>
+                              </div>
                             </div>
                             <div class="middel_right_info">
 
-                                <div class="header_wishlist">
+                                {{!-- <div class="header_wishlist">
                                     <a href="wishlist"><span class="lnr lnr-heart"></span> Wish list </a>
                                     <span class="wishlist_quantity">3</span>
                                 </div>
                                 <div class="mini_cart_wrapper">
                                     <a href="javascript:void(0)"><span class="lnr lnr-cart"></span>My Cart </a>
                                     <span class="cart_quantity">2</span>
-                                </div>
+                                </div> --}}
+                                <div class="discover_now">
+                <a href="#">Request a quote</a>
+              </div>
                             </div>
 
                         </div>
@@ -133,7 +141,7 @@
         <!--header middel end-->
         
         <!--mini cart-->
-        <div class="mini_cart">
+        {{!-- <div class="mini_cart">
             <div class="cart_close">
                 <div class="cart_text">
                     <h3>cart</h3>
@@ -191,11 +199,11 @@
 
             </div>
 
-        </div>
+        </div> --}}
         <!--mini cart end-->
         
         <!--header bottom satrt-->
-        <div class="header_bottom bottom_two sticky-header">
+        {{!-- <div class="header_bottom bottom_two sticky-header">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-12">
@@ -386,7 +394,7 @@
                                         <li><a href="#">Body</a></li>
                                         <li><a href="#">Accessories</a></li>
                                         <li><a href="#">Deals</a></li>
-                                        <li><a href="#">about Us</a></li>
+                                        <li><a href="about-us">about Us</a></li>
                                         <li><a href="contact"> Contact Us</a></li>
                                     </ul>
                                 </nav>
@@ -397,7 +405,7 @@
 
                 </div>
             </div>
-        </div>
+        </div> --}}
         <!--header bottom end-->
 
     </header>
@@ -609,14 +617,14 @@
                 <h3>Customer Services</h3>
                 <div class="footer_menu">
                   <ul>
-                    <li><a href="#">My Account</a></li>
-                    <li><a href="#">Track Your Order</a></li>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Delivery Information</a></li>
-                    <li><a href="#">Returns & Refunds</a></li>
-                    <li><a href="#">Product Recall</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Complaints Procedure Information</a></li>
+                    {{!-- <li><a href="#">My Account</a></li> --}}
+                    {{!-- <li><a href="#">Track Your Order</a></li> --}}
+                    {{!-- <li><a href="#">Help Center</a></li> --}}
+                    <li><a href="delivery-information">Delivery Information</a></li>
+                    <li><a href="return-process">Returns & Refunds</a></li>
+                    {{!-- <li><a href="#">Product Recall</a></li> --}}
+                    
+                    <li><a href="complaints-procedure-information">Complaints Procedure Information</a></li>
                   </ul>
                 </div>
               </div>
@@ -626,27 +634,28 @@
                 <h3>Legal Notices</h3>
                 <div class="footer_menu">
                   <ul>
-                    <li><a href="about">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="privacy-policy">Cookie Policy</a></li>
-                    <li><a href="coming-soon">IDD Policy</a></li>
-                    <li><a href="#">Terms of Use of Website</a></li>
-                    <li><a href="#">Promotion Terms & Conditions</a></li>
+                    <li><a href="terms-and-conditions">Terms & Conditions</a></li>
+                    <li><a href="privacy-policy">Privacy Policy</a></li>
+                    <li><a href="cookies-policy">Cookie Policy</a></li>
+                    {{!-- <li><a href="idd-policy">IDD Policy</a></li> --}}
+                    <li><a href="terms-of-use">Terms of Use of Website</a></li>
+                    {{!-- <li><a href="promotion-terms-and-conditions">Promotion Terms & Conditions</a></li> --}}
                   </ul>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="widgets_container widget_menu">
-                <h3>About Us</h3>
+                <h3>Company</h3>
                 <div class="footer_menu">
                   <ul>
-                    <li><a href="#">Newsletter Signup</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Advice Center</a></li>
-                    <li><a href="#">Safe Shopping</a></li>
-                    <li><a href="#">Sitemap</a></li>
-                    <li><a href="#">Specials</a></li>
+                    {{!-- <li><a href="#">Newsletter Signup</a></li> --}}
+                    <li><a href="about-us">About Us</a></li>
+                    <li><a href="contact">Contact Us</a></li>
+                    {{!-- <li><a href="#">Advice Center</a></li> --}}
+                    {{!-- <li><a href="#">Safe Shopping</a></li> --}}
+                    {{!-- <li><a href="#">Sitemap</a></li> --}}
+                    {{!-- <li><a href="#">Specials</a></li> --}}
                   </ul>
                 </div>
               </div>

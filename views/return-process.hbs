@@ -1,0 +1,67 @@
+ <div class="container bg-white shadow-sm rounded p-4">
+    {{!-- <h1 class="mb-3">Returns Process</h1>
+    <p class="text-muted">At <strong>Zytech Auto Parts</strong>, we want you to be satisfied with every purchase. If you’re not completely happy with your order, you may return eligible items in accordance with our Returns Policy outlined below.</p> --}}
+
+    
+
+    <!-- Returns Form -->
+    <h4 class="mt-4">Request a Return</h4>
+    <form class="row g-3 mt-2">
+      <div class="col-md-6">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="col-md-6">
+        <label for="orderNumber" class="form-label">Order Number</label>
+        <input type="text" class="form-control" id="orderNumber" placeholder="Enter your order number" required>
+      </div>
+      <div class="col-md-6">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" placeholder="+44 123 456 7890" required>
+      </div>
+      <div class="col-12">
+        <label for="partDetails" class="form-label">Part(s) to Return</label>
+        <textarea class="form-control" id="partDetails" rows="3" placeholder="List the parts you wish to return, including part number if available" required></textarea>
+      </div>
+      <div class="col-12">
+        <label for="reason" class="form-label">Reason for Return</label>
+        <select class="form-select" id="reason" required>
+          <option value="" selected disabled>-- Select reason --</option>
+          <option value="incorrect">Incorrect item received</option>
+          <option value="defective">Defective or damaged item</option>
+          <option value="not-needed">No longer needed</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <label for="comments" class="form-label">Additional Comments (optional)</label>
+        <textarea class="form-control" id="comments" rows="3" placeholder="Provide any additional details..."></textarea>
+      </div>
+      <div class="col-12 mt-3">
+        <button type="submit" class="btn btn-primary px-4">Submit Return Request</button>
+      </div>
+    </form>
+
+    <!-- Policy Section -->
+    <h4 class="mt-4">Returns Policy</h4>
+    <ul class="mb-4">
+      <li>Items must be returned within <strong>14 days</strong> of delivery.</li>
+      <li>Products must be unused, in original packaging, and in resalable condition.</li>
+      <li>Electrical parts, custom orders, and fitted items are non-returnable unless faulty.</li>
+      <li>Return shipping costs are the responsibility of the customer unless the item is defective or incorrect.</li>
+      <li>Refunds will be processed to the original payment method within 5–7 business days after inspection.</li>
+    </ul>
+
+    <div class="alert alert-info" style="font-size:0.9rem;">
+      <strong>Note:</strong> Please request a return authorization before sending items back to us. Unauthorized returns may be rejected.
+    </div>
+
+    <p class="mt-4 text-muted" style="font-size:0.9rem;">
+      For any questions regarding returns, please contact our support team at 
+      <a href="mailto:support@zytechautoparts.co.uk">support@zytechautoparts.co.uk</a>.
+    </p>
+  </div>

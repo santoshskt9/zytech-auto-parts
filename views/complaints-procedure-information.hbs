@@ -1,0 +1,73 @@
+<div class="container bg-white shadow-sm rounded p-4">
+    <h1 class="my-4 text-center">Complaints Procedure Information</h1>
+    <p class="text-muted">
+      At <strong>Zytech Auto Parts</strong>, we are committed to providing quality products and excellent service. 
+      However, we understand that sometimes things may not go as expected. 
+      If you have a complaint, we take it seriously and aim to resolve the issue quickly and fairly.
+    </p>
+
+    <!-- How to Raise a Complaint -->
+    <h4 class="mt-4">How to Raise a Complaint</h4>
+    <ol>
+      <li><strong>Contact Us:</strong> In the first instance, please reach out to our customer service team by email or phone.</li>
+      <li><strong>Provide Details:</strong> Share your order number, product details, and the nature of your complaint.</li>
+      <li><strong>Investigation:</strong> Our team will investigate your complaint thoroughly and may request further information.</li>
+      <li><strong>Resolution:</strong> We will provide you with a clear response and, where appropriate, corrective action or compensation.</li>
+    </ol>
+
+    <!-- Timeframe -->
+    <h4 class="mt-4">Our Timeframe</h4>
+    <ul>
+      <li>We acknowledge complaints within <strong>24-48 hours</strong>.</li>
+      {{!-- <li>We aim to provide a full response within <strong>10 business days</strong>.</li> --}}
+      <li>If the matter is complex and requires more time, we will keep you updated on progress.</li>
+    </ul>
+
+    <!-- Escalation -->
+    <h4 class="mt-4">Escalation</h4>
+    <p>
+      If you are dissatisfied with our initial response, you may escalate your complaint by contacting our 
+      <strong>Customer Support</strong>. 
+      We will conduct an independent review and provide a final resolution.
+    </p>
+
+    <!-- External Resolution -->
+    {{!-- <h4 class="mt-4">External Resolution</h4>
+    <p>
+      If you remain unsatisfied after our final response, you may seek independent advice or escalate your complaint 
+      to an external body such as <strong>Trading Standards</strong> or the relevant <strong>Alternative Dispute Resolution (ADR)</strong> service.
+    </p> --}}
+
+    <!-- Complaints Form -->
+    <h4 class="mt-4">Submit a Complaint Online</h4>
+    <form class="row g-3 mt-2">
+      <div class="col-md-6">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+      </div>
+      <div class="col-md-6">
+        <label for="orderNumber" class="form-label">Order Number (if applicable)</label>
+        <input type="text" class="form-control" id="orderNumber" placeholder="Enter your order number">
+      </div>
+      <div class="col-md-6">
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" placeholder="+44 123 456 7890">
+      </div>
+      <div class="col-12">
+        <label for="complaintDetails" class="form-label">Complaint Details</label>
+        <textarea class="form-control" id="complaintDetails" rows="4" placeholder="Please describe your complaint in detail" required></textarea>
+      </div>
+      <div class="col-12 mt-3">
+        <button type="submit" class="btn btn-danger px-4">Submit Complaint</button>
+      </div>
+    </form>
+
+    <p class="mt-4 text-muted" style="font-size:0.9rem;">
+      You may also contact us directly at 
+      <a href="mailto:support@zytechautoparts.com">support@zytechautoparts.com</a> or call us at +44 [Your Phone Number].
+    </p>
+  </div>
