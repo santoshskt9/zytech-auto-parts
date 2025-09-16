@@ -1,6 +1,6 @@
 
 const Router = require("express").Router();
-const { createContact } = require("./controller");
+const { createContact, createQuote } = require("./controller");
 const products = require("../data/products.json");
 
 Router.get("/", async (req, res) => {
@@ -36,10 +36,12 @@ Router.get("/complaints-procedure-information", async (req, res) => {
 Router.get("/delivery-information", async (req, res) => {
   res.render("delivery-information");
 });
-// Router.get("/contact", (req, res) => {
-//   res.render("contact", {
-//     message: "Contact Me Here",
-//   });
-// });
+
+Router.get("/request-quote", async (req, res) => {
+  res.render("requestQuote");
+});
+
 Router.post("/contact", createContact);
+Router.post("/quote", createQuote);
+
 module.exports = Router;

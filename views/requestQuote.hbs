@@ -1,0 +1,113 @@
+{{!-- Banner Start --}}
+<div class="breadcrumb_content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item active">Request a Quote</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- Banner End --}}
+
+<div class="contact_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="contact_message">
+                    <h2 class="mb-5">Request a Quote</h2>
+                    <form id="quoteForm" method="POST" action="/api/quote">
+                        <div class="row  g-2 g-lg-3">
+                            <div class="col-lg-6">
+                                <input name="fullName" placeholder="Full Name *" type="text" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <input name="email" placeholder="Email *" type="email" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <input name="phone" placeholder="Phone *" type="tel" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <input name="vin" placeholder="Vehicle VIN Number *" type="text" required>
+                            </div>
+                            <div class="col-lg-6">
+                                <input name="registration" placeholder="Vehicle Registration Number *" type="text" required>
+                            </div>
+                            <div class="col-12">
+                                <input name="vehicle" placeholder="Vehicle Make, Model, and Year *" type="text" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea name="partNumbers" placeholder="Part Number(s) - One per line" class="form-control" rows="3"></textarea>
+                                <small class="text-muted">If you have multiple part numbers, please enter one per line</small>
+                            </div>
+                            <div class="col-12">
+                                <textarea name="partDetails" placeholder="Part Details / Description *" class="form-control" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <textarea name="additionalInfo" placeholder="Additional Information or Requirements" class="form-control"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Submit Quote Request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="request-thankyou d-none alert alert-warning" role="alert">
+            <h4>We have recieved your request</h4>
+            <h5>Your QRN is <span id="qrn"></span></h5>
+            <p>Please note your request number for future reference.</p>
+            <p class="mt-3">Our team will review your request and get back to you within 24-48 hours.</p>
+            <p class="mt-1">For urgent inquiries, please call us at <a href="tel:+1234567890">+1 (234) 567-890</a>.</p>
+            <p class="mt-1">Thank you for considering us for your auto parts needs!</p>
+        </div>
+        
+        <div id="error" class="d-none alert alert-danger" role="alert"></div>
+    </div>
+</div>
+
+<script>
+document.getElementById('quoteForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const qrn = Math.floor(100000 + Math.random() * 900000); // Generate a random 6-digit QRN
+    const formData = new FormData(this);
+    const formObject = {};
+    formData.forEach((value, key) => {
+        formObject[key] = value;
+    });
+
+    formObject.qrn = qrn; // Add QRN to the form data
+
+    try {
+        const response = await fetch('/quote', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formObject)
+        });
+
+        const data = await response.json();
+
+        scrollTo(0,0);
+        
+        if (response.ok) {
+            document.querySelector('.request-thankyou').style.display = 'block';
+            document.getElementById('qrn').textContent = data.qrn || 'N/A';
+            this.reset();
+        } else {
+            document.getElementById('error').textContent = data.error || 'Failed to submit quote request. Please try again.';
+            document.getElementById('error').style.display = 'block';
+        }
+    } catch (error) {
+        document.getElementById('error').textContent = 'An error occurred. Please try again later.';
+        document.getElementById('error').style.display = 'block';
+    }
+});
+</script>
