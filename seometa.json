@@ -1,0 +1,139 @@
+{
+    "root": {
+        "title": "Zytech - Affordable Car Parts Store",
+        "description": "Zytech Auto Parts offers a wide range of affordable car parts and accessories. Shop now for quality products and excellent customer service.",
+        "keywords": "car parts, auto parts, affordable car parts, vehicle accessories, Zytech Auto Parts"
+    },
+    "pages": {
+        "home": {
+            "title": "Home - ",
+            "description": "Discover affordable car parts and accessories at Zytech Auto Parts. Quality products and excellent customer service await you.",
+            "keywords": "car parts, auto parts, affordable car parts, vehicle accessories, Zytech Auto Parts"
+        },
+        "contact": {
+            "title": "Contact Us - ",
+            "description": "Get in touch with Zytech Auto Parts for any inquiries or support. We're here to help you with your car parts needs.",
+            "keywords": "contact Zytech Auto Parts, customer support, car parts inquiries"
+        },
+        "privacy-policy": {
+            "title": "Privacy Policy - ",
+            "description": "Read the privacy policy of Zytech Auto Parts to understand how we collect, use, and protect your personal information.",
+            "keywords": "privacy policy, data protection, personal information, Zytech Auto Parts"
+        },
+        "terms-and-conditions": {
+            "title": "Terms and Conditions - ",
+            "description": "Review the terms and conditions of using Zytech Auto Parts' website and services. Know your rights and responsibilities.",
+            "keywords": "terms and conditions, user agreement, Zytech Auto Parts"
+        },
+        "cookies-policy": {
+            "title": "Cookies Policy - ",
+            "description": "Learn about our cookies policy at Zytech Auto Parts and how we use cookies to enhance your browsing experience.",
+            "keywords": "cookies policy, website cookies, Zytech Auto Parts"
+        },
+        "return-process": {
+            "title": "Return Process - ",
+            "description": "Understand the return process at Zytech Auto Parts. Find out how to return products and our return policy details.",
+            "keywords": "return process, product returns, return policy, Zytech Auto Parts"
+        },
+        "idd-policy": {
+            "title": "International Direct Delivery (IDD) Policy - ",
+            "description": "Explore the International Direct Delivery (IDD) policy of Zytech Auto Parts for shipping car parts worldwide.",
+            "keywords": "international delivery, shipping policy, IDD policy, Zytech Auto Parts"
+        },
+        "complaints-procedure-information": {
+            "title": "Complaints Procedure Information - ",
+            "description": "Find out how to file a complaint with Zytech Auto Parts and our procedure for handling customer complaints.",
+            "keywords": "complaints procedure, customer complaints, Zytech Auto Parts"
+        },
+        "sitemap": {
+            "title": "Sitemap - ",
+            "description": "Navigate through the Zytech Auto Parts website with our comprehensive sitemap.",
+            "keywords": "sitemap, website navigation, Zytech Auto Parts"
+        },
+        "about-us": {
+            "title": "About Us - ",
+            "description": "Learn more about Zytech Auto Parts, our mission, values, and commitment to providing quality car parts.",
+            "keywords": "about Zytech Auto Parts, company information, car parts provider"
+        },
+        "request-quote": {
+            "title": "Request a Quote - ",
+            "description": "Request a quote for car parts and accessories from Zytech Auto Parts. Get competitive pricing and quality products.",
+            "keywords": "request quote, car parts quote, auto parts pricing, Zytech Auto Parts"
+        },
+        "faq": {
+            "title": "FAQ - ",
+            "description": "Find answers to frequently asked questions about Zytech Auto Parts, our products, and services.",
+            "keywords": "FAQ, frequently asked questions, Zytech Auto Parts"
+        },
+        "blog": {
+            "title": "Blog - ",
+            "description": "Read the latest articles and updates from Zytech Auto Parts on car maintenance, parts, and industry news.",
+            "keywords": "blog, car maintenance, auto parts news, Zytech Auto Parts"
+        },
+        "product": {
+            "title": "Product - ",
+            "description": "Explore our range of car parts and accessories at Zytech Auto Parts. Quality products for your vehicle.",
+            "keywords": "car parts, auto parts, vehicle accessories, Zytech Auto Parts"
+        },
+        "category": {
+            "title": "Category - ",
+            "description": "Browse car parts by category at Zytech Auto Parts. Find the right parts for your vehicle easily.",
+            "keywords": "car parts categories, auto parts, vehicle accessories, Zytech Auto Parts"
+        },
+        "search": {
+            "title": "Search Results - ",
+            "description": "View search results for car parts and accessories at Zytech Auto Parts. Find what you need quickly.",
+            "keywords": "search car parts, auto parts search, vehicle accessories, Zytech Auto Parts"
+        },
+        "cart": {
+            "title": "Shopping Cart - ",
+            "description": "Review your shopping cart at Zytech Auto Parts. Manage your selected car parts and proceed to checkout.",
+            "keywords": "shopping cart, car parts cart, checkout, Zytech Auto Parts"
+        },
+        "checkout": {
+            "title": "Checkout - ",
+            "description": "Complete your purchase at Zytech Auto Parts. Secure checkout for your car parts and accessories.",
+            "keywords": "checkout, purchase car parts, secure payment, Zytech Auto Parts"
+        },
+        "order-confirmation": {
+            "title": "Order Confirmation - ",
+            "description": "Your order has been confirmed at Zytech Auto Parts. Thank you for shopping with us!",
+            "keywords": "order confirmation, purchase confirmation, Zytech Auto Parts"
+        },
+        "order-history": {
+            "title": "Order History - ",
+            "description": "View your order history at Zytech Auto Parts. Track past purchases and order details.",
+            "keywords": "order history, past purchases, Zytech Auto Parts"
+        },
+        "account-settings": {
+            "title": "Account Settings - ",
+            "description": "Manage your account settings at Zytech Auto Parts. Update your personal information and preferences.",
+            "keywords": "account settings, user profile, Zytech Auto Parts"
+        },
+        "reset-password": {
+            "title": "Reset Password - ",
+            "description": "Reset your password for your Zytech Auto Parts account. Secure your account with a new password.",
+            "keywords": "reset password, account security, Zytech Auto Parts"
+        },
+        "register": {
+            "title": "Register - ",
+            "description": "Create a new account at Zytech Auto Parts. Join us for exclusive offers and updates on car parts.",
+            "keywords": "register account, sign up, Zytech Auto Parts"
+        },
+        "login": {
+            "title": "Login - ",
+            "description": "Log in to your Zytech Auto Parts account. Access your orders, account settings, and more.",
+            "keywords": "login account, user access, Zytech Auto Parts"
+        },
+        "logout": {
+            "title": "Logout - ",
+            "description": "You have been logged out of your Zytech Auto Parts account. See you again soon!",
+            "keywords": "logout, user sign out, Zytech Auto Parts"
+        },
+        "404": {
+            "title": "Page Not Found - ",
+            "description": "The page you are looking for cannot be found. Return to the Zytech Auto Parts homepage.",
+            "keywords": "404 error, page not found, Zytech Auto Parts"
+        }
+    }
+}
