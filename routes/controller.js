@@ -6,6 +6,7 @@ const nodemailer = require("nodemailer");
 
 const createContact = async (req, res) => {
   const { fullName, email, phone, message, subject } = req.body;
+  console.log({fullName,email,phone});
   // Validate input
   if (!fullName || !email || !phone) {
     return res.status(400).json({ error: "All fields are required." });
