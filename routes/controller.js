@@ -31,7 +31,7 @@ const createContact = async (req, res) => {
 
 const createQuote = async (req, res) => {
   const { fullName, email, phone, vin, registration, vehicle, partNumbers, partDetails, additionalInfo, qrn } = req.body;
-  
+
   // Validate required fields
   if (!fullName || !email || !phone || !vehicle || !partDetails || !vin || !registration) {
     return res.status(400).json({ error: "Please fill in all required fields." });
@@ -71,6 +71,30 @@ const createQuote = async (req, res) => {
   res.status(200).json({ message: "Quote request sent successfully!" });
 };
 
+const createFeedback = async (req, res) => {
+  const { fullName, email, rating, message } = req.body;
+
+  if (!fullName || !email || !rating || !message) {
+    return res.status(400).json({ error: "All fields are required." });
+  }
+
+  console.log("Feedback Data", req.body);
+
+  const output = `
+        <p>You have new customer feedback</p>
+        <h3>Feedback Details</h3>
+        <ul>
+            <li>Name: ${fullName}</li>
+            <li>Email: ${email}</li>
+            <li>Rating: ${rating} Stars</li>
+            <li>Message: ${message}</li>
+        </ul>
+    `;
+
+  await sendEmail(output, "New Customer Feedback");
+  res.status(200).json({ message: "Feedback submitted successfully!" });
+};
+
 const sendEmail = async (htmlContent, subject) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
@@ -103,4 +127,5 @@ const sendEmail = async (htmlContent, subject) => {
 module.exports = {
   createContact,
   createQuote,
+  createFeedback,
 };

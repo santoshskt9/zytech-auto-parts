@@ -134,6 +134,11 @@
             "title": "Page Not Found - ",
             "description": "The page you are looking for cannot be found. Return to the Zytech Auto Parts homepage.",
             "keywords": "404 error, page not found, Zytech Auto Parts"
+        },
+        "feedback": {
+            "title": "Feedback - ",
+            "description": "We value your feedback. Let us know about your experience with Zytech Auto Parts.",
+            "keywords": "feedback, customer review, Zytech Auto Parts, customer experience"
         }
     }
 }

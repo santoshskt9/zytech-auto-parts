@@ -1,0 +1,154 @@
+<!--breadcrumbs area start-->
+<div class="breadcrumbs_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb_content">
+                    <ul>
+                        <li><a href="/">home</a></li>
+                        <li>Feedback</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--breadcrumbs area end-->
+
+<!--feedback area start-->
+<div class="contact_area mb-100">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12">
+                <div class="contact_message form feedback_form_wrapper shadow-sm p-5 rounded bg-white">
+                    <h3>Share Your Feedback</h3>
+                    <p>Your opinion matters to us! Please let us know how we're doing and how we can improve our
+                        services.</p>
+                    <form id="feedback-form" method="POST" action="/feedback">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p>
+                                    <label> Full Name (required)</label>
+                                    <input name="fullName" placeholder="Name *" type="text" required>
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p>
+                                    <label> Email Address (required)</label>
+                                    <input name="email" placeholder="Email *" type="email" required>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="feedback_rating_wrapper mb-5">
+                            <label class="d-block mb-2">How would you rate your experience? (1-5 Stars)</label>
+                            <div class="rating_stars">
+                                <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label>
+                                <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label>
+                                <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label>
+                                <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label>
+                                <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label>
+                            </div>
+                        </div>
+
+                        <div class="contact_textarea">
+                            <label> Your Feedback (required)</label>
+                            <textarea placeholder="Tell us about your experience *" name="message" class="form-control2"
+                                required></textarea>
+                        </div>
+
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-primary px-5 ">Submit Feedback</button>
+                        </div>
+                        <p class="form-messege mt-3"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .feedback_form_wrapper {
+        border: 1px solid #f1f1f1;
+        transition: transform 0.3s ease;
+    }
+
+    .feedback_form_wrapper:hover {
+        transform: translateY(-5px);
+    }
+
+    .rating_stars {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+    }
+
+    .rating_stars input {
+        display: none;
+    }
+
+    .rating_stars label {
+        font-size: 30px;
+        color: #ccc;
+        cursor: pointer;
+        transition: color 0.2s;
+        margin-right: 5px;
+    }
+
+    .rating_stars input:checked~label,
+    .rating_stars label:hover,
+    .rating_stars label:hover~label {
+        color: #ffcc00;
+    }
+
+    .rating_stars input:checked+label {
+        color: #ffcc00;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const feedbackForm = document.getElementById('feedback-form');
+        const formMessage = feedbackForm.querySelector('.form-messege');
+
+        feedbackForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(feedbackForm);
+            const data = Object.fromEntries(formData.entries());
+
+            if (!data.rating) {
+                formMessage.innerText = 'Please select a rating.';
+                formMessage.style.color = 'red';
+                return;
+            }
+
+            try {
+                const response = await fetch('/feedback', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    formMessage.innerText = result.message;
+                    formMessage.style.color = 'green';
+                    feedbackForm.reset();
+                } else {
+                    formMessage.innerText = result.error || 'Something went wrong.';
+                    formMessage.style.color = 'red';
+                }
+            } catch (error) {
+                console.error('Error submitting feedback:', error);
+                formMessage.innerText = 'Network error. Please try again later.';
+                formMessage.style.color = 'red';
+            }
+        });
+    });
+</script>
+<!--feedback area end-->

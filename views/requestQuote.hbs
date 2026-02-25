@@ -32,24 +32,41 @@
                             <div class="col-lg-6">
                                 <input name="phone" placeholder="Phone *" type="tel" required>
                             </div>
+
                             <div class="col-lg-6">
                                 <input name="vin" placeholder="Vehicle VIN Number *" type="text" required>
                             </div>
                             <div class="col-lg-6">
-                                <input name="registration" placeholder="Vehicle Registration Number *" type="text" required>
+                                <input name="reference" placeholder="Reference Number * (Optional)" type="text">
+                            </div>
+                            <div class="col-lg-6">
+                                <input name="registration" placeholder="Vehicle Registration Number *" type="text"
+                                    required>
                             </div>
                             <div class="col-12">
-                                <input name="vehicle" placeholder="Vehicle Make, Model, and Year *" type="text" required>
+                                <input name="vehicle" placeholder="Vehicle Make, Model, and Year *" type="text"
+                                    required>
                             </div>
                             <div class="col-12">
-                                <textarea name="partNumbers" placeholder="Part Number(s) - One per line" class="form-control" rows="3"></textarea>
-                                <small class="text-muted">If you have multiple part numbers, please enter one per line</small>
+                                <textarea name="partNumbers" placeholder="Part Number(s) - One per line"
+                                    class="form-control" rows="3"></textarea>
+                                <small class="text-muted">If you have multiple part numbers, please enter one per
+                                    line</small>
                             </div>
                             <div class="col-12">
-                                <textarea name="partDetails" placeholder="Part Details / Description *" class="form-control" required></textarea>
+                                <textarea name="partDetails" placeholder="Part Details / Description *"
+                                    class="form-control" required></textarea>
                             </div>
                             <div class="col-12">
-                                <textarea name="additionalInfo" placeholder="Additional Information or Requirements" class="form-control"></textarea>
+                                <textarea name="additionalInfo" placeholder="Additional Information or Requirements"
+                                    class="form-control"></textarea>
+                            </div>
+                            <div class="alert alert-warning" style="font-size:0.9rem;">
+                                <strong>Note:</strong> <br>1. Please provide as much information as possible to help us
+                                provide you with an accurate quote. <br>
+                                2. Please do not place order without confirming the part availability or compatibility
+                                with our sales team. <br>
+                                3. Please provide the reference number if you already request a quote on BreakerYard.
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="btn btn-primary">Submit Quote Request</button>
@@ -67,47 +84,47 @@
             <p class="mt-1">For urgent inquiries, please call us at <a href="tel:+1234567890">+1 (234) 567-890</a>.</p>
             <p class="mt-1">Thank you for considering us for your auto parts needs!</p>
         </div>
-        
+
         <div id="error" class="d-none alert alert-danger" role="alert"></div>
     </div>
 </div>
 
 <script>
-document.getElementById('quoteForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const qrn = Math.floor(100000 + Math.random() * 900000); // Generate a random 6-digit QRN
-    const formData = new FormData(this);
-    const formObject = {};
-    formData.forEach((value, key) => {
-        formObject[key] = value;
-    });
-
-    formObject.qrn = qrn; // Add QRN to the form data
-
-    try {
-        const response = await fetch('/quote', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formObject)
+    document.getElementById('quoteForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const qrn = Math.floor(100000 + Math.random() * 900000); // Generate a random 6-digit QRN
+        const formData = new FormData(this);
+        const formObject = {};
+        formData.forEach((value, key) => {
+            formObject[key] = value;
         });
 
-        const data = await response.json();
+        formObject.qrn = qrn; // Add QRN to the form data
 
-        scrollTo(0,0);
-        
-        if (response.ok) {
-            document.querySelector('.request-thankyou').style.display = 'block';
-            document.getElementById('qrn').textContent = data.qrn || 'N/A';
-            this.reset();
-        } else {
-            document.getElementById('error').textContent = data.error || 'Failed to submit quote request. Please try again.';
+        try {
+            const response = await fetch('/quote', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formObject)
+            });
+
+            const data = await response.json();
+
+            scrollTo(0, 0);
+
+            if (response.ok) {
+                document.querySelector('.request-thankyou').style.display = 'block';
+                document.getElementById('qrn').textContent = data.qrn || 'N/A';
+                this.reset();
+            } else {
+                document.getElementById('error').textContent = data.error || 'Failed to submit quote request. Please try again.';
+                document.getElementById('error').style.display = 'block';
+            }
+        } catch (error) {
+            document.getElementById('error').textContent = 'An error occurred. Please try again later.';
             document.getElementById('error').style.display = 'block';
         }
-    } catch (error) {
-        document.getElementById('error').textContent = 'An error occurred. Please try again later.';
-        document.getElementById('error').style.display = 'block';
-    }
-});
+    });
 </script>
